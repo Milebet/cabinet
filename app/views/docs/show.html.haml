@@ -1,6 +1,8 @@
-%h1= @doc.title
-%p= @doc.content
+.wrapper_with_padding
+	#doc_show
+		%h1.title= @doc.title
+		%p= simple_format(@doc.content)
 
-= link_to "All docs", docs_path
-= link_to "Fix doc", edit_doc(@doc)
-= link_to "Trash it", doc_path(@doc), method: :delete, dara {confirm: "Are  you sure?"}
+	.buttons
+		= link_to "Fix doc", edit_doc(@doc), class: "button"
+		= link_to "Trash it", doc_path(@doc), method: :delete, dara {confirm: "Are  you sure?"}, class: "button"
