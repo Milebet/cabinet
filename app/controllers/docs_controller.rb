@@ -42,10 +42,10 @@ class DocsController < ApplicationController
 	private
 
 		def find_doc
-			@doc = 	Doc.find(paarams[:id])
+			@doc = 	Doc.find(params[:id])
 		end
 
 		def doc_params
-			paarams.require(:doc).permit(:title, :content)
+			params.require(:doc).permit(:title, :content)
 		end
 end
